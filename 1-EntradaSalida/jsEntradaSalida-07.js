@@ -5,21 +5,55 @@ mostrar el resulto por medio de "ALERT"
 ej.: "la Resta es 750"*/ 
 function sumar()
 {	
-	alert("ok");	
+	var a;
+	var b;
+	var resultado;
+	a=txtIdNumeroUno.value;
+	b=txtIdNumeroDos.value;
+	a=parseInt(a);
+	b=parseInt(b);
+	resultado = a+b
+	alert("la suma da "+resultado);	
 }
 
 function restar()
 {
+	var a;
+	var b;
+	var resultado;
+	a=txtIdNumeroUno.value;
+	b=txtIdNumeroDos.value;
+	a=parseInt(a);
+	b=parseInt(b);
+	resultado = a-b;
+	alert("la resta es "+resultado);
 	
 }
 
 function multiplicar()
 { 
+	var a;
+	var b;
+	var resultado;
+	a=txtIdNumeroUno.value;
+	b=txtIdNumeroDos.value;
+	a=parseInt(a);
+	b=parseInt(b);
+	resultado = a*b;
+	alert("la multiplicacion es "+resultado);
 	
 }
 
 function dividir()
 {
-	
+	var a;
+	var b;
+	var resultado;
+	a=txtIdNumeroUno.value;
+	b=txtIdNumeroDos.value;
+	a=parseInt(a);
+	b=parseInt(b);
+	resultado = a/b;
+	alert("la division es "+resultado);
 }
 

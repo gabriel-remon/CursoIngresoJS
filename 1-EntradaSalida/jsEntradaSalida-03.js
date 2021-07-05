@@ -4,8 +4,10 @@ y luego mostrarlo por 'Alert' al presionar el botón  'mostrar'*/
 function mostrar()
 {
 	var nombreIngresado;
+	//definir variable
 	nombreIngresado=txtIdNombre.value;
-	alert("ok");
+	//carga de variable
+	alert("nombre ingresado ="+nombreIngresado);
 
 }
 
