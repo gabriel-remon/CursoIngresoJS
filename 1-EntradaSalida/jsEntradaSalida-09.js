@@ -6,12 +6,9 @@ en el cuadro de texto "RESULTADO".*/
 function mostrarAumento()
 {
 	var a;
-	var final;
+	var resultado;
 	//definiendo variables
 	a=txtIdSueldo.value;
-	final=a*1.1;
-	alert(""+final);
-	//no se como imprimir el resultado !!!!!!!!!
-	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	resultado=a*1.1;
+	document.getElementById("txtIdResultado").value = resultado;
 }

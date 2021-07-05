@@ -8,8 +8,8 @@ function sumar()
 	var a;
 	var b;
 	var resultado;
-	a=txtIdNumeroUno.value;
-	b=txtIdNumeroDos.value;
+	a=document.getElementById("txtIdNumeroUno").value;
+	b=document.getElementById("txtIdNumeroDos").value;
 	a=parseInt(a);
 	b=parseInt(b);
 	resultado = a+b
@@ -21,8 +21,8 @@ function restar()
 	var a;
 	var b;
 	var resultado;
-	a=txtIdNumeroUno.value;
-	b=txtIdNumeroDos.value;
+	a=document.getElementById("txtIdNumeroUno").value;
+	b=document.getElementById("txtIdNumeroDos").value;
 	a=parseInt(a);
 	b=parseInt(b);
 	resultado = a-b;
@@ -35,8 +35,8 @@ function multiplicar()
 	var a;
 	var b;
 	var resultado;
-	a=txtIdNumeroUno.value;
-	b=txtIdNumeroDos.value;
+	a=document.getElementById("txtIdNumeroUno").value;
+	b=document.getElementById("txtIdNumeroDos").value;
 	a=parseInt(a);
 	b=parseInt(b);
 	resultado = a*b;
@@ -49,8 +49,8 @@ function dividir()
 	var a;
 	var b;
 	var resultado;
-	a=txtIdNumeroUno.value;
-	b=txtIdNumeroDos.value;
+	a=document.getElementById("txtIdNumeroUno").value;
+	b=document.getElementById("txtIdNumeroDos").value;
 	a=parseInt(a);
 	b=parseInt(b);
 	resultado = a/b;

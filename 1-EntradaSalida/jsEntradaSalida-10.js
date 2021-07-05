@@ -8,8 +8,5 @@ function mostrarAumento()
 	var a;
 	a=txtIdImporte.value;
 	a=a*0.75;
-	alert(""+a);
-	//me esta volviendo loco no saber como imprimir 
-	//un dato en un cuadro de texto!!!!!!!!!!!!!!!!
-	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	document.getElementById("txtIdResultado").value=a;
 }

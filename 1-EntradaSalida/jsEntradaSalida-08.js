@@ -8,8 +8,8 @@ function SacarResto()
 	var a;
 	var b;
 	var resto;
-	a=txtIdNumeroDividendo.value;
-	b=txtIdNumeroDivisor.value;
+	a=document.getElementById("txtIdNumeroDividendo").value;
+	b=document.getElementById("txtIdNumeroDivisor").value;
 	a=parseInt(a);
 	b=parseInt(b);
 	resto=a%b;

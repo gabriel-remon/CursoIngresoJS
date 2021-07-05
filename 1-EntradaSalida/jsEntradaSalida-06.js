@@ -8,8 +8,8 @@ function sumar()
 	var b;
 	var resultado;
 	//definir variable
-	a=txtIdNumeroUno.value;
-	b=txtIdNumeroDos.value;
+	a=document.getElementById("txtIdNumeroUno").value;
+	b=document.getElementById("txtIdNumeroDos").value;
 	//carga de dato
 	a=parseInt(a);
 	b=parseInt(b);

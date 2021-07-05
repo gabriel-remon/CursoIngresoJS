@@ -8,8 +8,8 @@ function mostrar()
 	var a;
 	var b;
 	//definir variable
-	nombre=txtIdNombre.value;
-	edad=txtIdEdad.value
+	nombre=document.getElementById("txtIdNombre").value
+	edad=document.getElementById("txtIdEdad").value
 	//carga de datos
 	a="usted es "+nombre;
 	b=a+" y tiene "+edad
