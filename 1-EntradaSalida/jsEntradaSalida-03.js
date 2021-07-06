@@ -6,11 +6,11 @@ y luego mostrarlo por 'Alert' al presionar el botón  'mostrar'*/
 function mostrar()
 {
 	var nombreIngresado;
-	//definir variable
-	nombreIngresado=txtIdNombre.value;
-	//carga de variable
-	alert("nombre ingresado ="+nombreIngresado);
-
+	var mensaje;
+	//Definiendo variables
+	nombreIngresado = document.getElementById("txtIdNombre").value;
+	//Carga de dato
+	mensaje = "Su nombre es "+nombreIngresado;
+	//Creacion del mensaje
+	alert(mensaje);
 }
-
-

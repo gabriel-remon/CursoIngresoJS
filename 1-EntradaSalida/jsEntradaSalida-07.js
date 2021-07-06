@@ -7,55 +7,83 @@ mostrar el resulto por medio de "ALERT"
 ej.: "la Resta es 750"*/ 
 function sumar()
 {	
-	var a;
-	var b;
+	var numeroUno;
+	var numeroDos;
 	var resultado;
-	a=document.getElementById("txtIdNumeroUno").value;
-	b=document.getElementById("txtIdNumeroDos").value;
-	a=parseInt(a);
-	b=parseInt(b);
-	resultado = a+b
-	alert("la suma da "+resultado);	
+	var mensaje;
+	//Definicion de variables
+	numeroUno = document.getElementById("txtIdNumeroUno").value;
+	numeroDos = document.getElementById("txtIdNumeroDos").value;
+	//Carga de datos
+	numeroUno = parseInt(numeroUno);
+	numeroDos = parseInt(numeroDos);
+	//Transformacion de texto a dato
+	resultado = numeroUno + numeroDos;
+	//Operacion de suma
+	mensaje = "La suma es "+resultado;
+	//Creacion de mensaje
+	alert(mensaje);	
 }
 
 function restar()
 {
-	var a;
-	var b;
+	var numeroUno;
+	var numeroDos;
 	var resultado;
-	a=document.getElementById("txtIdNumeroUno").value;
-	b=document.getElementById("txtIdNumeroDos").value;
-	a=parseInt(a);
-	b=parseInt(b);
-	resultado = a-b;
-	alert("la resta es "+resultado);
+	var mensaje;
+	//Definicion de variables
+	numeroUno = document.getElementById("txtIdNumeroUno").value;
+	numeroDos = document.getElementById("txtIdNumeroDos").value;
+	//Carga de datos
+	numeroUno = parseInt(numeroUno);
+	numeroDos = parseInt(numeroDos);
+	//Transformacion de texto a dato
+	resultado = numeroUno - numeroDos;
+	//Operacion de resta
+	mensaje = "La resta es "+resultado;
+	//Creacion de mensaje
+	alert(mensaje);	
 	
 }
 
 function multiplicar()
 { 
-	var a;
-	var b;
+	var numeroUno;
+	var numeroDos;
 	var resultado;
-	a=document.getElementById("txtIdNumeroUno").value;
-	b=document.getElementById("txtIdNumeroDos").value;
-	a=parseInt(a);
-	b=parseInt(b);
-	resultado = a*b;
-	alert("la multiplicacion es "+resultado);
+	var mensaje;
+	//Definicion de variables
+	numeroUno = document.getElementById("txtIdNumeroUno").value;
+	numeroDos = document.getElementById("txtIdNumeroDos").value;
+	//Carga de datos
+	numeroUno = parseInt(numeroUno);
+	numeroDos = parseInt(numeroDos);
+	//Transformacion de texto a dato
+	resultado = numeroUno * numeroDos;
+	//Operacion de multiplicacion
+	mensaje = "La multiplicacion es "+resultado;
+	//Creacion de mensaje
+	alert(mensaje);	
 	
 }
 
 function dividir()
 {
-	var a;
-	var b;
+	var numeroUno;
+	var numeroDos;
 	var resultado;
-	a=document.getElementById("txtIdNumeroUno").value;
-	b=document.getElementById("txtIdNumeroDos").value;
-	a=parseInt(a);
-	b=parseInt(b);
-	resultado = a/b;
-	alert("la division es "+resultado);
+	var mensaje;
+	//Definicion de variables
+	numeroUno = document.getElementById("txtIdNumeroUno").value;
+	numeroDos = document.getElementById("txtIdNumeroDos").value;
+	//Carga de datos
+	numeroUno = parseInt(numeroUno);
+	numeroDos = parseInt(numeroDos);
+	//Transformacion de texto a dato
+	resultado = numeroUno / numeroDos;
+	//Operacion de divicion
+	mensaje = "La divicion es "+resultado;
+	//Creacion de mensaje
+	alert(mensaje);	
 }
 

@@ -7,16 +7,13 @@ function mostrar()
 {	
 	var nombre;
 	var edad;
-	var a;
-	var b;
-	//definir variable
-	nombre=document.getElementById("txtIdNombre").value
-	edad=document.getElementById("txtIdEdad").value
-	//carga de datos
-	a="usted es "+nombre;
-	b=a+" y tiene "+edad
-	//creacion de una unica variable con el nombre 
-	//y la edad
-	alert(""+b);
+	var mensaje;
+	//Definiendo variables
+	nombre = document.getElementById("txtIdNombre").value
+	edad = document.getElementById("txtIdEdad").value
+	//Carga de datos
+	mensaje = "Usted es "+nombre+" y tiene "+edad;
+	//Creacion del mensaje
+	alert(mensaje);
 }
 

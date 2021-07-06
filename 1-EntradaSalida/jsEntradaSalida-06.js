@@ -6,19 +6,22 @@ transformarlos a enteros (parseInt) y Sumarlos.
 mostrar el resulto por medio de "ALERT"*/
 function sumar()
 {
-	var a;
-	var b;
+	var numeroUno;
+	var umeroDos;
 	var resultado;
-	//definir variable
-	a=document.getElementById("txtIdNumeroUno").value;
-	b=document.getElementById("txtIdNumeroDos").value;
-	//carga de dato
-	a=parseInt(a);
-	b=parseInt(b);
-	//comversion de texto a numero
-	resultado=a+b;
-	//suma de datos
-	alert("La suma es "+resultado);
+	var mensaje;
+	//Definiendo variables
+	numeroUno = document.getElementById("txtIdNumeroUno").value;
+	numeroDos = document.getElementById("txtIdNumeroDos").value;
+	//Darga de dato
+	numeroUno = parseInt(numeroUno);
+	numeroDos = parseInt(numeroDos);
+	//Transformacion de texto a numero
+	resultado = numeroUno + numeroDos;
+	//Duma de datos
+	mensaje = "La suma es "+resultado;
+	//Creacion del mensaje
+	alert(mensaje);
 
 }
 

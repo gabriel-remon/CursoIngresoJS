@@ -7,10 +7,12 @@ mostrar el importe con un aumento del 10 %
 en el cuadro de texto "RESULTADO".*/
 function mostrarAumento()
 {
-	var a;
+	var sueldo;
 	var resultado;
 	//definiendo variables
-	a=txtIdSueldo.value;
-	resultado=a*1.1;
+	sueldo = document.getElementById("txtIdSueldo").value;
+	//carga de dato
+	resultado = sueldo*1.1;
+	//suma del 10%
 	document.getElementById("txtIdResultado").value = resultado;
 }

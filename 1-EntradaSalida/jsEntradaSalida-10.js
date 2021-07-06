@@ -7,8 +7,13 @@ mostrar el importe con un Descuento del 25 %
 en el cuadro de texto "RESULTADO"*/
 function mostrarAumento()
 {
-	var a;
-	a=txtIdImporte.value;
-	a=a*0.75;
-	document.getElementById("txtIdResultado").value=a;
+	var importe;
+	var resultado;
+	//Carga de variable
+	importe = document.getElementById("txtIdImporte").value;
+	//Carga del dato
+	resultado = importe * 0.75;
+	//Resta del 25%
+	document.getElementById("txtIdResultado").value=resultado;
+	//Muestra del resultado
 }
