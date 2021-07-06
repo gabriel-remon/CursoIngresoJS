@@ -10,7 +10,7 @@ function mostrar()
 	//Definiendo la variable
 	document.getElementById("txtIdNombre").value = "";
 	//Eliminacion del dato cargado en la ultima ejecucion
-	nombre = prompt("Ingrese su nombre")
+	nombre = prompt("Ingrese su nombre","Ej. Pan triste")
 	//Carga del dato
 	document.getElementById("txtIdNombre").value = nombre;
 	//Muestra del dato cargado en variable
