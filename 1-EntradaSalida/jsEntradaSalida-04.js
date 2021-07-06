@@ -6,13 +6,20 @@ y lo muestro por 'ID' al presionar el botón 'mostrar'
 */
 function mostrar()
 {
-	let nombre;
+	var nombre;
+	var mensaje;
 	//Definiendo la variable
+	
 	document.getElementById("txtIdNombre").value = "";
 	//Eliminacion del dato cargado en la ultima ejecucion
+	
 	nombre = prompt("Ingrese su nombre","Ej. Pan triste")
 	//Carga del dato
-	document.getElementById("txtIdNombre").value = nombre;
+	
+	mensaje = "Su nombre es "+nombre;
+	//creacion del mensaje
+
+	document.getElementById("txtIdNombre").value = mensaje;
 	//Muestra del dato cargado en variable
 }
 

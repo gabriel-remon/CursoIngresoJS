@@ -9,11 +9,14 @@ function mostrar()
 	var edad;
 	var mensaje;
 	//Definiendo variables
+	
 	nombre = document.getElementById("txtIdNombre").value
 	edad = document.getElementById("txtIdEdad").value
 	//Carga de datos
-	mensaje = "Usted es "+nombre+" y tiene "+edad;
+	
+	mensaje = "Usted es "+nombre+" y tiene "+edad+" años";
 	//Creacion del mensaje
+	
 	alert(mensaje);
 }
 

@@ -8,9 +8,13 @@ function mostrar()
 	var nombre;
 	var mensaje;
 	//Definiendo variables
+	
 	nombre = prompt("Ingrese su nombre", "Ej. Peperino Pomulo")
 	//Carga de dato en variable "a" 
+	
 	mensaje = "Su nombre es "+nombre;
+	//Creacion del mensaje
+	
 	alert(mensaje);
 	//Impresion de la variable
 }

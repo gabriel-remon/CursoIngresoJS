@@ -10,9 +10,12 @@ function mostrarAumento()
 	var sueldo;
 	var resultado;
 	//definiendo variables
+	
 	sueldo = document.getElementById("txtIdSueldo").value;
 	//carga de dato
+	
 	resultado = sueldo*1.1;
 	//suma del 10%
+	
 	document.getElementById("txtIdResultado").value = resultado;
 }

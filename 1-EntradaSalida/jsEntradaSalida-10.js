@@ -10,10 +10,13 @@ function mostrarAumento()
 	var importe;
 	var resultado;
 	//Carga de variable
+	
 	importe = document.getElementById("txtIdImporte").value;
 	//Carga del dato
+	
 	resultado = importe * 0.75;
 	//Resta del 25%
+	
 	document.getElementById("txtIdResultado").value=resultado;
 	//Muestra del resultado
 }

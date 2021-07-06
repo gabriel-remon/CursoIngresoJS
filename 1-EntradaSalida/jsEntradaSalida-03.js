@@ -8,9 +8,12 @@ function mostrar()
 	var nombreIngresado;
 	var mensaje;
 	//Definiendo variables
+	
 	nombreIngresado = document.getElementById("txtIdNombre").value;
 	//Carga de dato
+	
 	mensaje = "Su nombre es "+nombreIngresado;
 	//Creacion del mensaje
+	
 	alert(mensaje);
 }

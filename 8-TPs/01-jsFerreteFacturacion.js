@@ -5,54 +5,90 @@ C.	ingresar tres precios de productos  y mostrar precio final (más IVA 21%).
 */
 function Sumar () 
 {
-	var a;
-	var b;
-	var c;
-	var final;
-	a=document.getElementById("txtIdPrecioUno").value;
-	b=document.getElementById("txtIdPrecioDos").value;
-	c=document.getElementById("txtIdPrecioTres").value;
-	a=parseInt(a);
-	b=parseInt(b);
-	c=parseInt(c);
-	final=a+b+c;
-	alert("facturacion total = "+final);
+	var precioUno;
+	var precioDos;
+	var precioTres;
+	var total;
+	var mensaje;
+	//Definiendo variables
+
+	precioUno = document.getElementById("txtIdPrecioUno").value;
+	precioDos = document.getElementById("txtIdPrecioDos").value;
+	precioTres = document.getElementById("txtIdPrecioTres").value;
+	//Carga de datos
+
+	precioUno = parseInt(precioUno);
+	precioDos = parseInt(precioDos);
+	precioTres = parseInt(precioTres);
+	//Transformando texto a numero
+
+	total = precioUno + precioDos + precioTres;
+	//Suma de todos los precios
+
+	mensaje = "facturacion total = "+total; 
+	alert(mensaje);
 
 }
+
+
 function Promedio () 
 {
 	
-	var a;
-	var b;
-	var c;
+	var precioUno;
+	var precioDos;
+	var precioTres;
 	var promedio;
-	a=document.getElementById("txtIdPrecioUno").value;
-	b=document.getElementById("txtIdPrecioDos").value;
-	c=document.getElementById("txtIdPrecioTres").value;
-	a=parseInt(a);
-	b=parseInt(b);
-	c=parseInt(c);
-	promedio=a+b+c;
-	promedio=promedio/3;
+	var mensaje;
+	//Definiendo variables
+
+	precioUno = document.getElementById("txtIdPrecioUno").value;
+	precioDos = document.getElementById("txtIdPrecioDos").value;
+	precioTres = document.getElementById("txtIdPrecioTres").value;
+	//Carga de datos
+
+	precioUno = parseInt(precioUno);
+	precioDos = parseInt(precioDos);
+	precioTres = parseInt(precioTres);
+	//Transformando texto a numero
+
+	promedio = (precioUno + precioDos + precioTres) / 3;
+	//promedio de los tres precios
+
 	alert("Promedio total = "+promedio);
 }
+
+
 function PrecioFinal () 
 {
-	var a;
-	var b;
-	var c;
-	a=document.getElementById("txtIdPrecioUno").value;
-	b=document.getElementById("txtIdPrecioDos").value;
-	c=document.getElementById("txtIdPrecioTres").value;
-	a=parseInt(a);
-	b=parseInt(b);
-	c=parseInt(c);
-	a=a*1.21;
-	b=b*1.21;
-	c=c*1.21;
+	var precioUno;
+	var precioDos;
+	var precioTres;
+	var preciofinalUno;
+	var precioFinalDos;
+	var precioFinalTres;
+	var mensaje;
+	//Definiendo variables
+
+	precioUno = document.getElementById("txtIdPrecioUno").value;
+	precioDos = document.getElementById("txtIdPrecioDos").value;
+	precioTres = document.getElementById("txtIdPrecioTres").value;
+	//Carga de datos
+
+	precioUno = parseInt(precioUno);
+	precioDos = parseInt(precioDos);
+	precioTres = parseInt(precioTres);
+	//Transformando texto a numero
+
+	preciofinalUno = precioUno * 1.21;
+	precioFinalDos = precioDos * 1.21;
+	precioFinalTres = precioTres * 1.21;
+	//suma del iva (21%) a los productos
+
 	alert("precios con iva incluidos");
-	document.getElementById("txtIdPrecioUno").value=a;
-	document.getElementById("txtIdPrecioDos").value=b;
-	document.getElementById("txtIdPrecioTres").value=c;
+	//mensaje opcion
+
+	document.getElementById("txtIdPrecioUno").value = preciofinalUno;
+	document.getElementById("txtIdPrecioDos").value = precioFinalDos;
+	document.getElementById("txtIdPrecioTres").value = precioFinalTres;
 
 }
