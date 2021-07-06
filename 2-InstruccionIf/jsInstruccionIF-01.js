@@ -1,15 +1,21 @@
 function mostrar()
 {
 	var edad;
-	edad = 0
+	//definiendo variable
+
 	edad = document.getElementById("txtIdEdad").value;
-	if(edad==15)
+	//carga de variable
+
+	edad = parseInt(edad);
+	//comversion de texto a numero
+
+	if(edad == 15)
 	{
-		alert("Niña bonita")
+		alert("Niña bonita");
 	}
 	else
 	{
-		alert("Niña fea")
+		
 	}
 
 }
