@@ -1,21 +1,24 @@
+/*
+autor: Gabriel Remon
+ejercicio: 01 - 2
+*/
+
 function mostrar()
 {
 	var edad;
-	//definiendo variable
+	var mensaje;
+	//Declarando variable
+
+	mensaje = "";
+	//limpiar el mensaje anterior
 
 	edad = document.getElementById("txtIdEdad").value;
 	//carga de variable
 
-	edad = parseInt(edad);
-	//comversion de texto a numero
-
-	if(edad == 15)
+	if(edad === "15" )
 	{
-		alert("Niña bonita");
-	}
-	else
-	{
-		
+		mensaje = "Niña bonita";
 	}
 
+	alert(mensaje);
 }

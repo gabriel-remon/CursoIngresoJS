@@ -1,14 +1,32 @@
+/*
+autor: Gabriel Remon
+ejercicio: 05 - 2
+*/
+
+
 function mostrar()
 {
 	var edad;
+	var mensaje;
+	//Declarando variables
+
+	mensaje = "";
+	//limpieza de variable
+
 	edad = document.getElementById("txtIdEdad").value;
+	//toma de datos
+	
 	edad = parseInt(edad);
+	//Transformacion de texto a numero
+
 	if(edad >= 18)
 	{
-		alert("La persona no es adolecente");
+		mensaje = "La persona no es adolecente";
 	}
 	else if(edad <13)
 	{
-		alert("La persona no es adolecente");
+		mensaje = "La persona no es adolecente";
 	}
+
+	alert(mensaje);
 }

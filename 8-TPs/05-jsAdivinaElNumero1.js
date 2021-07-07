@@ -12,15 +12,41 @@ var contadorIntentos;
 
 function comenzar()
 {
-	//Genero el número RANDOM entre 1 y 100
-	 
-		//alert(numeroSecreto );
-	
+	var txtComienzo;
+	numeroSecreto = Math.random();
+	numeroSecreto = Math.floor(numeroSecreto*101);
+	document.getElementById("txtIdIntentos").value = 0;
+	txtComienzo = "comenzo el juego";
+	alert(txtComienzo);
 
 }
 
 function verificar()
 {
+	var verificador;
+	var mensaje;
+
+	verificador = document.getElementById("txtIdNumero").value;
+	contadorIntentos =document.getElementById("txtIdIntentos").value;
 	
-	
+	contadorIntentos = parseInt(contadorIntentos);
+	verificador = parseInt(verificador);
+
+	contadorIntentos = contadorIntentos + 1;
+
+
+	if(verificador == numeroSecreto)
+	{
+		mensaje = "Usted es el ganador!!! y con solo "+contadorIntentos+" intentos";
+	}
+	else if(verificador > numeroSecreto)
+	{
+		mensaje = "Te pasaste del numero secreto";
+	}
+	else
+	{
+		mensaje = "Te falta para el numero secreto";
+	}
+	alert(mensaje);
+	document.getElementById("txtIdIntentos").value = contadorIntentos;
 }

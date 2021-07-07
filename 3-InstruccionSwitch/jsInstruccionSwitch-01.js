@@ -1,9 +1,20 @@
+/*
+autor: Gabriel Remon
+ejercicio: 01 - 3
+*/
+
 function mostrar()
 {
 	var mesDelAño;
 	var mensaje;
+	//Declarando variables
+
 	mensaje = "";
+	//limpiando variable
+
 	mesDelAño = document.getElementById("txtIdMes").value;
+	//carga de dato
+
 	switch(mesDelAño)
 	{
 		case "Enero" :
@@ -19,6 +30,7 @@ function mostrar()
 			mensaje = "Felices fiestas!!!"
 			break;
 	}
+	
 	alert(mensaje);
 
 

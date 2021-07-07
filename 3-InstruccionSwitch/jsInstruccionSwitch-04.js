@@ -1,8 +1,18 @@
+/*
+autor: Gabriel Remon
+ejercicio: 04 - 3
+*/
+
+
 function mostrar()
 {
 	var mesDelAño;
 	var mensaje;
+	//Declarando variables
+	
 	mesDelAño = document.getElementById("txtIdMes").value;
+	//Carga de datos
+
 	switch(mesDelAño)
 	{
 		case "Enero" :

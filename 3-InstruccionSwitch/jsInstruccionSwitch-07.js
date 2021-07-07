@@ -1,6 +1,36 @@
+/*
+autor: Gabriel Remon
+ejercicio: 07 - 3
+*/
+
+
 function mostrar()
 {
-	var destinoIngresado =txtIdDestino.value;
-	alert(destinoIngresado);
+	var destinoIngresado;
+	var mensaje;
+	//declarando varialbes
 
-}//FIN DE LA FUNCIÓN
+	destinoIngresado = document.getElementById("txtIdDestino").value;
+	//carga de datos
+
+	switch(destinoIngresado)
+	{
+		case "Bariloche" :
+		mensaje = "Se encuentra punto cardinal Oeste";
+		break;
+
+		case "Cataratas" :
+		mensaje = "Se encuentra punto cardinal Norte";
+		break
+
+		case "Mar del plata" :
+		mensaje = "Se encuentra punto cardinal Este";
+		break;
+
+		case "Ushuaia" :
+		mensaje = "Se encuentra punto cardinal Sur";
+	}
+
+	alert(mensaje);
+
+}

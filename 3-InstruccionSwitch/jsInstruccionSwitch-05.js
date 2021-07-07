@@ -1,6 +1,11 @@
+/*
+autor: Gabriel Remon
+ejercicio: 05 - 3
+*/
+
+
 function mostrar()
 {
-	//tomo la hora
 	var horaDelDia;
 	var mensaje;
 	//deficiendo variables
@@ -37,4 +42,4 @@ function mostrar()
 
 
 
-}//FIN DE LA FUNCIÓN
+}

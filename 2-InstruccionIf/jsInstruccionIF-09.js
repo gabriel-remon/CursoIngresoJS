@@ -1,11 +1,22 @@
+/*
+autor: Gabriel Remon
+ejercicio: 09 - 2
+*/
+
+
 function mostrar()
 {
+	var numeroRandom;
+	var numeroTemporal;
+	var mensaje;
+	//definiendo variables
 
-	//preguntar como quiere que sea el programa
-	//si quiere que aparezca un numero random cada 
-	//ves que se precione mostrar
-	//o que aparezcan numeros uno despues del otros
+	numeroTemporal = Math.random();
+	numeroRandom = Math.floor( numeroTemporal * 11);
+	//creaccion del numero random
 
-	//contador se reinicia con cada mostrar
+	mensaje = "Numero random: "+numeroRandom;
+	//Creacion del mensaje
 
+	alert(mensaje);
 }

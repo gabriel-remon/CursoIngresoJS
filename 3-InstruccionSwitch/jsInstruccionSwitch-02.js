@@ -1,9 +1,18 @@
+/*
+autor: Gabriel Remon
+ejercicio: 02 - 3
+*/
+
+
 function mostrar()
 {
 	var mesDelAño;
 	var mensaje;
+	//Declarando variable
+
 	mesDelAño = document.getElementById("txtIdMes").value;
-	estado1 = mesDelAño&&"Enero"&&"Febrero"&&"Marzo"&&"Abril"&&"Mayo"&&"Junio"
+	//carga de dato
+
 	switch(mesDelAño)
 	{
 		case "Enero" :
