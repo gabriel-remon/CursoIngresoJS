@@ -14,15 +14,88 @@ var contadorIntentos;
 
 function comenzar()
 {
-	//Genero el número RANDOM entre 1 y 100
-	 
-	
 
+	numeroSecreto = Math.random();
+	numeroSecreto = Math.floor(numeroSecreto * 100 + 1);
+//umeroSecreto = numeroSecreto + 1;
+	document.getElementById("txtIdIntentos").value = 0;
+	alert("Comenzo el juego");
+//lert(numeroSecreto); 
 }
 
 function verificar()
 {
+	var mensaje;
+	var verificador;
+
+	verificador = document.getElementById("txtIdNumero").value;
+	contadorDeIntentos = document.getElementById("txtIdIntentos").value;
 	
+	verificador = parseInt(verificador);
+	contadorDeIntentos = parseInt(contadorDeIntentos);
+
+	contadorDeIntentos = contadorDeIntentos + 1;
+	document.getElementById("txtIdIntentos").value = contadorDeIntentos;
+
+	if(verificador == numeroSecreto)
+	{
+		mensaje = "ganaste!!";
+		if(contadorDeIntentos > 10) 
+		{
+			mensaje = "afortunado en el amor!!"
+		}
+		else
+		{
+			switch( contadorDeIntentos )
+			{
+				case 1 :
+				mensaje = "usted es un Psiquico";
+				break;
+
+				case 2 :
+				mensaje = "excelente percepcion";
+				break;
+
+				case 3 :
+				mensaje = "Esto es suerte";
+				break;
+
+				case 4 :
+				mensaje = "Exelente tecnica";
+				break;
+
+				case 5 :
+				mensaje = "usted esta en la media";
+				break;
+
+				case 6 :
+				case 7 :
+				case 8 :
+				case 9 :
+				case 10 :
+				mensaje = "falta tecnica";
+			}
+		}
+		//selecciona el mensaje adecuado para el ganador
+	
+		mensaje = "GANASTE!! " + mensaje;
+		contadorDeIntentos = 0;
+		 //reinicio contado
+
+	}
+
+	else if( verificador > numeroSecreto )
+	{
+		mensaje = "Te pasaste ";
+	}
+
+	else
+	{
+		mensaje = "Te falta ";
+	}
+
+	alert(mensaje);
+}
+
 	
 
-}
