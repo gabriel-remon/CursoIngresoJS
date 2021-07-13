@@ -4,28 +4,28 @@ ejercicio: 08 - 2
 */
 
 
-unction mostrar()
+function mostrar()
 {
 	var edad;
 	var estadoCivil;
 	var mensaje;
 	//Declarando variables
 
-	mensaje = "";
-
 	edad = document.getElementById("txtIdEdad").value;
-	estadoCivil = document.getElementById("estadoCivil").value;
-	//Entrada de datos
-
 	edad = parseInt(edad);
-	//Transformacion de texto a numero
 
-	if(edad >= 18)
+	estadoCivil = document.getElementById("estadoCivil").value;
+	//carga de datos de datos
+
+	if(edad > 17 && estadoCivil == "Soltero")
 	{
-		if(estadoCivil == "Soltero")
-		{
-			mensaje = "Es soltero no es menor";
-		}
+	
+		mensaje = "Es soltero no es menor";
+	
+	}
+	else
+	{
+		mensaje = "";
 	}
 
 	alert(mensaje);

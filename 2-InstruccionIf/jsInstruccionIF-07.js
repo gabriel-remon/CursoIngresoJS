@@ -11,8 +11,6 @@ function mostrar()
 	var mensaje;
 	//declarando variables
 
-	mensaje = "";
-
 	edad = document.getElementById("txtIdEdad").value;
 	estadoCivil = document.getElementById("estadoCivil").value;
 	//carga de datos
@@ -20,13 +18,18 @@ function mostrar()
 	edad = parseInt(edad);
 	//Transformacion de texto a numero
 
-	if (edad <18)
+	if (edad < 18 && estadoCivil != "Soltero")
 	{
-		if (estadoCivil != "Soltero")
-		{
-				mensaje = "Es muy pequeño para NO ser soltero";
-		}
+	
+		mensaje = "Es muy pequeño para NO ser soltero";			
 	}
+
+	else
+	{
+		mensaje = "";
+		//limpieza del mensaje
+	}
+
 
 	alert(mensaje);
 

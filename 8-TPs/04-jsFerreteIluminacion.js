@@ -43,7 +43,7 @@ function CalcularPrecio ()
         switch(cantidadLampara)
         {
             case 5 :
-            if (marca === "ArgentinaLuz") 
+            if (marca == "ArgentinaLuz") 
             {
                 descuento = 0.6; //40% de descuento
             }
@@ -54,11 +54,11 @@ function CalcularPrecio ()
             break;
 
             case 4 :
-            if (marca === "ArgentinaLuz")
+            if (marca == "ArgentinaLuz")
             {
                 descuento = 0.75; // 25% de descuento
             }
-            else if(marca === "FelipeLaparas")
+            else if(marca == "FelipeLaparas")
             {
                 descuento = 0.75; // 25% de descuento
             }
@@ -69,11 +69,11 @@ function CalcularPrecio ()
             break;
 
             case 3 :
-            if (marca === "ArgentinaLuz")
+            if (marca == "ArgentinaLuz")
             {
                 descuento = 0.85; //15% de descuento
             }
-            else if (marca === "FelipeLaparas")
+            else if (marca == "FelipeLaparas")
             {
                 descuento = 0.9; //10% de descuento 
             }

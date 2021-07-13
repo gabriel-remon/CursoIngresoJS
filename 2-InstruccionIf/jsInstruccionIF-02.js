@@ -9,19 +9,20 @@ function mostrar()
 	var mensaje;
 	//Declarando variables
 
-	mensaje = "";
-	//limpieza de variable
-
 	edad = document.getElementById("txtIdEdad").value;
 	//carga de dato
 
 	edad = parseInt(edad);
 	//transformacion de texto a numero
 
-	if(edad >= 18)
+	if(edad > 17)
 	{
 		mensaje = "La persona es mayor de edad";
 	} 
+	else
+	{
+		mensaje = "";
+	}
 
 	alert(mensaje);
 

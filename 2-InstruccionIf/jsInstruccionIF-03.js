@@ -15,7 +15,7 @@ function mostrar()
 	edad = parseInt(edad);
 	//comversion de texto a numero
 
-	if(edad >= 18)
+	if(edad > 17)
 	{
 		mensaje = "Persona mayor de edad";
 	} 

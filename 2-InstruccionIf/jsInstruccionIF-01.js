@@ -9,15 +9,16 @@ function mostrar()
 	var mensaje;
 	//Declarando variable
 
-	mensaje = "";
-	//limpiar el mensaje anterior
-
 	edad = document.getElementById("txtIdEdad").value;
 	//carga de variable
 
-	if(edad === "15" )
+	if(edad == "15" )
 	{
 		mensaje = "Niña bonita";
+	}
+	else 
+	{
+		mensaje = "";
 	}
 
 	alert(mensaje);
