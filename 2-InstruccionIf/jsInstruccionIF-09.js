@@ -12,7 +12,7 @@ function mostrar()
 	//definiendo variables
 
 	numeroTemporal = Math.random();
-	numeroRandom = Math.floor( numeroTemporal * 11);
+	numeroRandom = Math.floor(numeroTemporal * 10) + 1 ;
 	//creaccion del numero random
 
 	mensaje = "Numero random: "+numeroRandom;

@@ -9,15 +9,23 @@ de no ser igual se debe informar si “falta…”  para llegar al número secre
 */
 var numeroSecreto; 
 var contadorIntentos;
+//declarando variables para todas las funciones
 
 function comenzar()
 {
-	var txtComienzo;
-	numeroSecreto = Math.random();
-	numeroSecreto = Math.floor(numeroSecreto*101);
-	document.getElementById("txtIdIntentos").value = 0;
-	txtComienzo = "comenzo el juego";
-	alert(txtComienzo);
+	var inicio;
+
+	numeroSecreto=Math.random();
+	numeroSecreto=Math.floor(numeroSecreto*101);
+	//generacion del numero 
+
+	contadorIntentos=0;
+	document.getElementById("txtIdIntentos").value=contadorIntentos;
+	//reinicio del contador
+
+	inicio="comenzo el juego";
+	alert(inicio);
+	//mensaje de comienzo del juego
 
 }
 
@@ -25,28 +33,36 @@ function verificar()
 {
 	var verificador;
 	var mensaje;
+	//declarando variables
 
-	verificador = document.getElementById("txtIdNumero").value;
-	contadorIntentos =document.getElementById("txtIdIntentos").value;
-	
-	contadorIntentos = parseInt(contadorIntentos);
-	verificador = parseInt(verificador);
+	verificador=document.getElementById("txtIdNumero").value;
+	verificador=parseInt(verificador);
+	//carga del numero a adivinar
 
-	contadorIntentos = contadorIntentos + 1;
+	contadorIntentos++;
+	document.getElementById("txtIdIntentos").value = contadorIntentos;
+	//incrementador del contador
 
-
-	if(verificador == numeroSecreto)
+	if(verificador==numeroSecreto)
 	{
-		mensaje = "Usted es el ganador!!! y con solo "+contadorIntentos+" intentos";
+		mensaje="Usted es el ganador!!! y con solo "+contadorIntentos+" intentos";
 	}
-	else if(verificador > numeroSecreto)
-	{
-		mensaje = "Te pasaste del numero secreto";
-	}
+
+
 	else
 	{
-		mensaje = "Te falta para el numero secreto";
+
+		if(verificador>numeroSecreto)
+		{
+			mensaje="Te pasaste del numero secreto";
+		}
+		else
+		{
+			mensaje="Te falta para el numero secreto";
+		}
+
 	}
+
 	alert(mensaje);
-	document.getElementById("txtIdIntentos").value = contadorIntentos;
+
 }

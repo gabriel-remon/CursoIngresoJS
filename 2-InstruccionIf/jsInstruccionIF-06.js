@@ -36,5 +36,6 @@ function mostrar()
 		}
 		//si la edad es menor a 13
 	}
+	
 	alert(mensaje);
 }

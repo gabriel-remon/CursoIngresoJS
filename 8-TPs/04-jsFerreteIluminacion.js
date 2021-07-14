@@ -6,103 +6,119 @@ C.	Si compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas
 D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, si es  “FelipeLamparas” se hace un descuento del 10 % y si es de otra marca un 5%.
 E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de ingresos brutos en informar del impuesto con el siguiente mensaje:
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
+ 
+alumno: Remon Gabriel
+Actuvidad: TP 04
 
  */
-function CalcularPrecio () 
+ 
+function CalcularPrecio ()
 {
-    var cantidadLampara;
-    var marca;
+    var precioLampara;
+    var cantidad;
     var descuento;
-    var precio;
-    var precioImpuesto ;
-    var precioBase;
+    var marca;
+    var precioFinal;
+    var impuestos;
     var mensaje;
-    //Declarancion de variables
+    //declarando variables
 
-    precioImpuesto = 0;
-    descuento = 1;
-    precioBase = 35;
-    //valores base 
+    precioLampara=35;
+    //precio base de lamparas
 
-    cantidadLampara = document.getElementById("txtIdCantidad").value;
-    marca = document.getElementById("Marca").value;
-    //carga de datos
+    cantidad=document.getElementById("txtIdCantidad").value;
+    cantidad=parseInt(cantidad);
+    //carga dato cantidad de lamparas
 
-    cantidadLampara = parseInt(cantidadLampara);
-    //comvercion de texto a numero
+    marca=document.getElementById("Marca").value;
+    //carga de la marca 
 
-    cantidadLampara = Math.floor(cantidadLampara);
-    //definiendo lampara como un numero entero sin decimales
-
-    if (cantidadLampara >= 6)
+    if(cantidad>5)
     {
-        descuento = 0.5; //50% de descuento
+        descuento=0.5; //descuento del 50%
     }
+    //si compra 6 o mas lamparas
+
     else
     {
-        switch(cantidadLampara)
+        if (cantidad>4)
         {
-            case 5 :
-            if (marca == "ArgentinaLuz") 
+            if(marca=="ArgentinaLuz")
             {
-                descuento = 0.6; //40% de descuento
+                descuento=0.6; //descuento del 40%
             }
             else
             {
-                descuento = 0.7; //30% de descuento
+                descuento=0.7; //descuento del 30%
             }
-            break;
-
-            case 4 :
-            if (marca == "ArgentinaLuz")
-            {
-                descuento = 0.75; // 25% de descuento
-            }
-            else if(marca == "FelipeLaparas")
-            {
-                descuento = 0.75; // 25% de descuento
-            }
-            else
-            {
-                descuento = 0.8; //20% de descuento
-            }
-            break;
-
-            case 3 :
-            if (marca == "ArgentinaLuz")
-            {
-                descuento = 0.85; //15% de descuento
-            }
-            else if (marca == "FelipeLaparas")
-            {
-                descuento = 0.9; //10% de descuento 
-            }
-            else
-            {
-                descuento = 0.95; //5% de descuento
-            }
-
         }
-        //fin de switch
+        //si compra 5 lamparas
 
+        else
+        {
+            if(cantidad>3)
+            {
+                if(marca=="ArgentinaLuz" || marca=="FelipeLamparas")
+                {
+                    descuento=0.75; //descuentop del 25%
+                }
+                else
+                {
+                    descuento=0.8; //descuento del 20%
+                }
+            }
+            //si compra 4 lamparas
+
+            else
+            {
+                if(cantidad>2)
+                {
+                    if(marca=="ArgentinaLuz")
+                    {
+                        descuento=0.85; //descuento del 15%
+                    }
+                    else
+                    {
+                        if(marca=="FelipeLamparas")
+                        {
+                            descuento=0.9; //descuento del 10%
+                        }
+                        else
+                        {
+                            descuento=0.95; //descuento del 5%
+                        }
+                    }
+                }
+                //si compra 3 lamparas
+
+                else
+                {
+                    descuento=1; //sin descuento
+                }
+                //si compra menos de 3 lamparas
+            }
+            //decision de 3 lamparas o menos 
+        }
+        //decision de 4 lamparas o menos
     }
-    //fin de la aplicacion de descuentos
+    //decision de 5 lamparas o menos
 
-    precio = cantidadLampara * precioBase * descuento;
+    precioFinal=precioLampara*cantidad*descuento;
+    //calculo del precio 
 
-    if (precio > 120)
+    if(precioFinal>120)
     {
-        precioImpuesto = precio * 0.1; //impuesto de IIBB
-        mensaje = "Ustedes pago $"+precioImpuesto+" de IIBB";
-        alert(mensaje)
+        impuesto=precioFinal*0.1;
+        precioFinal=impuesto+precioFinal;
+        mensaje="Importe a abonar: $" + precioFinal + ".Usted esta pagando $"+impuesto+"de IIBB";
     }
-    //Suma de IIBB
-   
-   precio = precio + precioImpuesto;
-   //precio final
+    //suma del impuesto
 
-   precio = "$"+precio;
-   document.getElementById("txtIdprecioDescuento").value = precio;
-   //muestra del mensaje 
-   
+    else
+    {
+        mensaje="Importe a abonar: $"+precioFinal;
+    }
+    //precio sin impuestos
+
+    document.getElementById("txtIdprecioDescuento").value=mensaje;
 }

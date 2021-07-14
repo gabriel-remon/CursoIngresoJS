@@ -17,16 +17,11 @@ function mostrar()
 	estadoCivil = document.getElementById("estadoCivil").value;
 	//carga de datos de datos
 
-	if(edad > 17 && estadoCivil == "Soltero")
+	if(edad>17 && estadoCivil=="Soltero")
 	{
 	
-		mensaje = "Es soltero no es menor";
+		alert("Es soltero y no es menor");
 	
-	}
-	else
-	{
-		mensaje = "";
 	}
 
-	alert(mensaje);
 }

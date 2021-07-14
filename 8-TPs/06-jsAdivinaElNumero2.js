@@ -15,12 +15,14 @@ var contadorIntentos;
 function comenzar()
 {
 
-	numeroSecreto = Math.random();
-	numeroSecreto = Math.floor(numeroSecreto * 100 + 1);
-//umeroSecreto = numeroSecreto + 1;
-	document.getElementById("txtIdIntentos").value = 0;
+	numeroSecreto=Math.random();
+	numeroSecreto=Math.floor(numeroSecreto * 100)+1;
+
+	contadorDeIntentos = 0;
+	document.getElementById("txtIdIntentos").value=contadorDeIntentos;
+
 	alert("Comenzo el juego");
-//lert(numeroSecreto); 
+
 }
 
 function verificar()
@@ -29,52 +31,70 @@ function verificar()
 	var verificador;
 
 	verificador = document.getElementById("txtIdNumero").value;
-	contadorDeIntentos = document.getElementById("txtIdIntentos").value;
+	//contadorDeIntentos = document.getElementById("txtIdIntentos").value;
 	
 	verificador = parseInt(verificador);
-	contadorDeIntentos = parseInt(contadorDeIntentos);
+	//contadorDeIntentos = parseInt(contadorDeIntentos);
 
-	contadorDeIntentos = contadorDeIntentos + 1;
+	contadorDeIntentos++;
 	document.getElementById("txtIdIntentos").value = contadorDeIntentos;
 
 	if(verificador == numeroSecreto)
 	{
-		mensaje = "ganaste!!";
+
 		if(contadorDeIntentos > 10) 
 		{
 			mensaje = "afortunado en el amor!!"
 		}
 		else
 		{
-			switch( contadorDeIntentos )
+			if(contadorDeIntentos>5)
 			{
-				case 1 :
-				mensaje = "usted es un Psiquico";
-				break;
-
-				case 2 :
-				mensaje = "excelente percepcion";
-				break;
-
-				case 3 :
-				mensaje = "Esto es suerte";
-				break;
-
-				case 4 :
-				mensaje = "Exelente tecnica";
-				break;
-
-				case 5 :
-				mensaje = "usted esta en la media";
-				break;
-
-				case 6 :
-				case 7 :
-				case 8 :
-				case 9 :
-				case 10 :
-				mensaje = "falta tecnica";
+				mensaje="falta tecnica";
 			}
+			//si contador esta entre 6 y 10
+
+			else
+			{
+				if(contadorDeIntentos==5)
+				{
+					mensaje="Usted esta en la media";
+				}
+				else
+				{
+					if(contadorDeIntentos==4)
+					{
+						mensaje="Exelente tecnica";
+					}
+					else
+					{
+						if(contadorDeIntentos==3)
+						{
+							mensaje="Esto es suerte";
+						}
+						//si contador es 3
+
+						else
+						{
+							if(contadorDeIntentos==2)
+							{
+								mensaje="Excelente percepcion";
+							}
+
+							else
+							{
+								mensaje="Usted es un psiqico";
+							}
+
+						}
+						//si contador es 1 o 2
+					}
+					//si contador es menor a 4
+				}
+				//si contador es menor a 5
+			}
+			//si contador es menor a 6
+
 		}
 		//selecciona el mensaje adecuado para el ganador
 	
@@ -83,16 +103,21 @@ function verificar()
 		 //reinicio contado
 
 	}
+	//si el numero es correto
 
-	else if( verificador > numeroSecreto )
+	else 
 	{
-		mensaje = "Te pasaste ";
-	}
+		if(verificador>numeroSecreto)
+		{
+			mensaje="Te pasaste";
+		}
 
-	else
-	{
-		mensaje = "Te falta ";
+		else
+		{
+			mensaje="Te falta";
+		}
 	}
+	//si el numero es incorrecto
 
 	alert(mensaje);
 }
