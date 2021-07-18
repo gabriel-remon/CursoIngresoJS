@@ -8,157 +8,94 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
  
 alumno: Remon Gabriel
-Actuvidad: TP 04
+Actuvidad: TP 04 solo SWICH
 
  */
  
 function CalcularPrecio ()
 {
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-{
-    var precioLampara;
-    var cantidad;
-    var descuento;
+    var cantidadLamparas;
     var marca;
     var precioFinal;
-    var impuestos;
+    var precioBase;
+    var descuento;
+    var impuesto;
     var mensaje;
-    //declarando variables
 
-    precioLampara=35;
-    //precio base de lamparas
+    precioBase=35;
 
-    cantidad=document.getElementById("txtIdCantidad").value;
-    cantidad=parseInt(cantidad);
-    //carga dato cantidad de lamparas
+    cantidadLamparas=document.getElementById("txtIdCantidad").value;
+    cantidadLamparas=parseInt(cantidadLamparas);
 
     marca=document.getElementById("Marca").value;
-    //carga de la marca 
 
-    if(cantidad>5)
+    if(cantidadLamparas>5)
     {
         descuento=0.5; //descuento del 50%
     }
-    //si compra 6 o mas lamparas
-
     else
     {
-        if (cantidad==5)
+        switch(cantidadLamparas)
         {
-            if(marca=="ArgentinaLuz")
-            {
-                descuento=0.6; //descuento del 40%
-            }
-            else
-            {
-                descuento=0.7; //descuento del 30%
-            }
-        }
-        //si compra 5 lamparas
-
-        else
-        {
-            if(cantidad==4)
-            {
-                if(marca=="ArgentinaLuz" || marca=="FelipeLamparas")
+            case 5:
+                if (marca=="ArgentinaLuz")
                 {
-                    descuento=0.75; //descuentop del 25%
+                    descuento=0.4; //descuento del 40%
+                }
+                else
+                {
+                    descuento=0.7; //descuento del 30%
+                }
+            break;
+
+            case 4:
+                if (marca=="ArgentinaLuz" || marca=="FelipeLamparas")
+                {
+                    descuento=0.75; //descuento del 25%
                 }
                 else
                 {
                     descuento=0.8; //descuento del 20%
                 }
-            }
-            //si compra 4 lamparas
+            break;
 
-            else
-            {
-                if(cantidad==3)
+            case 3:
+                switch(marca)
                 {
-                    if(marca=="ArgentinaLuz")
-                    {
+                    case "ArgentinaLuz":
                         descuento=0.85; //descuento del 15%
-                    }
-                    else
-                    {
-                        if(marca=="FelipeLamparas")
-                        {
-                            descuento=0.9; //descuento del 10%
-                        }
-                        else
-                        {
-                            descuento=0.95; //descuento del 5%
-                        }
-                    }
-                }
-                //si compra 3 lamparas
+                    break;
 
-                else
-                {
-                    descuento=1; //sin descuento
+                    case "FelipeLamparas":
+                        descuento=0.9; //descuento del 10%
+                    break;
+
+                    default:
+                        descuento=0.95; //descuento del 5%
+                    break;
                 }
-                //si compra menos de 3 lamparas
-            }
-            //decision de 3 lamparas o menos 
+            break;
+
+            default:
+                descuento=1; //sin descuento
+            break;
         }
-        //decision de 4 lamparas o menos
     }
-    //decision de 5 lamparas o menos
 
-    precioFinal=precioLampara*cantidad*descuento;
-    //calculo del precio 
+    precioFinal=cantidadLamparas*precioBase*descuento;
 
-    if(precioFinal>120)
+    if (precioFinal>120)
     {
         impuesto=precioFinal*0.1;
-        precioFinal=impuesto+precioFinal;
-        mensaje="Importe a abonar: $" + precioFinal + ".Usted esta pagando $"+impuesto+"de IIBB";
+        precioFinal=precioFinal+impuesto;
+        mensaje="El importe a abonar es de $"+precioFinal+" este valor tiene incluido $"+impuesto+" de IIBB";
     }
-    //suma del impuesto
-
     else
     {
-        mensaje="Importe a abonar: $"+precioFinal;
+        mensaje="El importe a abonar es de $"+precioFinal;
     }
-    //precio sin impuestos
 
     document.getElementById("txtIdprecioDescuento").value=mensaje;
-}
-*/
+
+}  
+
