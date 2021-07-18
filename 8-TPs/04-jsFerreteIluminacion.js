@@ -14,6 +14,45 @@ Actuvidad: TP 04
  
 function CalcularPrecio ()
 {
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+{
     var precioLampara;
     var cantidad;
     var descuento;
@@ -41,7 +80,7 @@ function CalcularPrecio ()
 
     else
     {
-        if (cantidad>4)
+        if (cantidad==5)
         {
             if(marca=="ArgentinaLuz")
             {
@@ -56,7 +95,7 @@ function CalcularPrecio ()
 
         else
         {
-            if(cantidad>3)
+            if(cantidad==4)
             {
                 if(marca=="ArgentinaLuz" || marca=="FelipeLamparas")
                 {
@@ -71,7 +110,7 @@ function CalcularPrecio ()
 
             else
             {
-                if(cantidad>2)
+                if(cantidad==3)
                 {
                     if(marca=="ArgentinaLuz")
                     {
@@ -122,3 +161,4 @@ function CalcularPrecio ()
 
     document.getElementById("txtIdprecioDescuento").value=mensaje;
 }
+*/

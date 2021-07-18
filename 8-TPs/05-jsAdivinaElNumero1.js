@@ -6,7 +6,12 @@ secreto del 1 al 100, en la pantalla del juego
   por terminado el juego con un mensaje similar a este: 
 “Usted es un ganador!!! y en solo X intentos”.
 de no ser igual se debe informar si “falta…”  para llegar al número secreto  o si “se pasó…”  del número secreto.
+
+alumno: Remon Gabriel
+Actuvidad: TP 05
+
 */
+
 var numeroSecreto; 
 var contadorIntentos;
 //declarando variables para todas las funciones
@@ -43,24 +48,23 @@ function verificar()
 	document.getElementById("txtIdIntentos").value = contadorIntentos;
 	//incrementador del contador
 
-	if(verificador==numeroSecreto)
+	switch(verificador)
 	{
-		mensaje="Usted es el ganador!!! y con solo "+contadorIntentos+" intentos";
-	}
+		case numeroSecreto:
+			mensaje="Usted es el ganador!!! y solo con "+contadorIntentos+" intentos";
+			contadorIntentos=0;
+		break;
 
-
-	else
-	{
-
-		if(verificador>numeroSecreto)
-		{
-			mensaje="Te pasaste del numero secreto";
-		}
-		else
-		{
-			mensaje="Te falta para el numero secreto";
-		}
-
+		default:
+			if(verificador>numeroSecreto)
+			{
+				mensaje="Te pasaste del numero secreto";
+			}
+			else
+			{
+				mensaje="Te falta para el numero secreto";
+			}
+		break;
 	}
 
 	alert(mensaje);

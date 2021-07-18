@@ -1,6 +1,6 @@
 /*
 autor: Gabriel Remon
-ejercicio: 01 - 3
+ejercicio: SWITCH 01
 */
 
 function mostrar()
@@ -9,26 +9,30 @@ function mostrar()
 	var mensaje;
 	//Declarando variables
 
-	mensaje = "";
-	//limpiando variable
-
 	mesDelAño = document.getElementById("txtIdMes").value;
 	//carga de dato
 
 	switch(mesDelAño)
 	{
-		case "Enero" :
+		case "Enero":
 			mensaje = "que comience bien el año!!";
-			break;
-		case "Marzo" :
+		break;
+
+		case "Marzo":
 			mensaje = "a clases!!!"
-			break;
-		case "Julio" :
+		break;
+
+		case "Julio":
 			mensaje = "se vienen las vacaciones!!!";
-			break;
-		case "Diciembre" :
+		break;
+
+		case "Diciembre":
 			mensaje = "Felices fiestas!!!"
-			break;
+		break;
+
+		default:
+			mensaje="Este mes no tiene eventos importantes";
+		break;
 	}
 	
 	alert(mensaje);

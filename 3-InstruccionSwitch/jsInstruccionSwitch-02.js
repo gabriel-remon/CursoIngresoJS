@@ -1,6 +1,6 @@
 /*
 autor: Gabriel Remon
-ejercicio: 02 - 3
+ejercicio: SWITCH 02
 */
 
 
@@ -15,25 +15,29 @@ function mostrar()
 
 	switch(mesDelAño)
 	{
-		case "Enero" :
-		case "Febrero" :
-		case "Marzo" :
-		case "Abril" : 
-		case "Mayo" :
-		case "Junio" :
-		mensaje = "Falta para el invierno";
+		case "Julio":
+		case "Agosto":
+			mensaje = "Abrigate que hace frio";
 		break;
 
-		case "Julio" :
-		case "Agosto" :
-		mensaje = "Abrigate que hace frio";
+		case "Marzo":
+		case "Abril": 
+		case "Mayo":
+		case "Junio":
+			mensaje = "Falta para el invierno";
 		break;
 
-		case "Septiembre" :
-		case "Octubre" :
-		case "Noviembre" :
+		default:
+		/*
+		case "Enero":
+		case "Febrero":
+		case "Septiembre":
+		case "Octubre":
+		case "Noviembre":
 		case "Diciembre":
-		mensaje = "Ya pasamos el frio, ahora calor!!!";
+		*/
+			mensaje = "Ya pasamos el frio, ahora calor!!!";
+		break;
 	}
 
 	alert(mensaje);

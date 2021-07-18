@@ -1,6 +1,6 @@
 /*
 autor: Gabriel Remon
-ejercicio: 08 - 3
+ejercicio: SWITCH 08
 */
 
 function mostrar()
@@ -14,15 +14,18 @@ function mostrar()
 
 	switch(destinoIngresado)
 	{
-		case "Bariloche" :
-		case "Ushuaia" :
-		mensaje = "Hace FRIO";
+		case "Bariloche":
+		case "Ushuaia":
+			mensaje = "Hace FRIO";
 		break;
 
-		case "Mar del plata" :
-		case "Cataratas" :
-		mensaje = "Hace CALOR";
-	
+		default:
+		/*
+		case "Mar del plata":
+		case "Cataratas":
+		*/
+			mensaje = "Hace CALOR";
+		break;
 	}
 
 	alert(mensaje);
