@@ -1,6 +1,11 @@
 /*
 al presionar el botón 
-pedir un número entre 0 y 9 inclusive.*/
+pedir un número entre 0 y 9 inclusive.
+
+autor: Remon Gabriel
+actuvidad: WHILE 04
+
+*/
 function mostrar()
 {
 	var numeroIngresado;
@@ -27,4 +32,4 @@ function mostrar()
 	
 	}
 	
-}//FIN DE LA FUNCIÓN
+}

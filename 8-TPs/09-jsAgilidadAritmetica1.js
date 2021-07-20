@@ -5,12 +5,15 @@ y una de las cuatro operaciones básicas (suma, resta,
  En el cuadro de texto resultado el jugador debe ingresar
  el resultado de la operación y presionar el botón Aceptar.
 se debe informar si el resultado es el correcto o no.
+
+alumno: Remon Gabriel
+Actuvidad: TP 09
+
 */
     var numero1;
     var operacion;
     var numero2;
-    //var respuesta;
-    //var respuestaUsuario;
+
 function comenzar()
 {
     numero1 = numeroRandom(10);
@@ -52,8 +55,11 @@ function Responder()
 
 function numeroRandom(max)
 {
+    var random;
+
     random = Math.random();
     random = Math.floor(random * max +1);
+    
     return random;
 }
 //funcion de numero random, "max" define hasta que numero llegara
@@ -61,6 +67,8 @@ function numeroRandom(max)
 
 function operacionRandom(numerOperacion)
 {
+    var numerOperacion;
+
     switch(numerOperacion)
     {
         case 1 :
@@ -85,6 +93,10 @@ function operacionRandom(numerOperacion)
 
 function verificadorOperacion(variable1, variable2,variableOperacion)
 {
+    var variable1;
+    var variable2;
+    var variableOperacion;
+
     switch(variableOperacion)
     {
         case "+" :

@@ -1,6 +1,14 @@
 /*
 Al presionar el botón pedir  números  hasta que el usuario quiera,
-sumar los que son positivos y multiplicar los negativos.*/
+sumar los que son positivos y multiplicar los negativos.
+
+autor: Remon Gabriel
+actuvidad: WHILE 08
+
+*/
+
+
+
 function mostrar()
 {
 	var numeroIngresado;
@@ -9,23 +17,25 @@ function mostrar()
 	var contador;
 	var mensajeSuma;
 	var mensajeMultiplicacion;
+	var cantidadNumeros;
 
+	cantidadNumeros=0;
 	suma=0;
 	multiplicacion=0;
-	contador=1;
+	contador=0;
 
-	while(contador<10000)
+	while(contador==0)
 	{
-		numeroIngresado=prompt("ingrese el "+contador+"º numero");
+		cantidadNumeros++;
+		numeroIngresado=prompt("ingrese el "+cantidadNumeros+"º numero");
 		numeroIngresado=parseInt(numeroIngresado);
 
 		if(numeroIngresado==null || isNaN(numeroIngresado))
 		{
-			break;
+			contador=1;
 		}
 		else
 		{
-			contador++;
 
 			if (numeroIngresado<0)
 			{
@@ -56,4 +66,4 @@ function mostrar()
 	document.getElementById("txtIdSuma").value=mensajeSuma;
 	document.getElementById("txtIdProducto").value=mensajeMultiplicacion;
 
-}//FIN DE LA FUNCIÓN
+}

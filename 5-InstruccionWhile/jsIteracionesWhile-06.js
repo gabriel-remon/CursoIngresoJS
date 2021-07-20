@@ -1,3 +1,11 @@
+/*
+
+autor: Remon Gabriel
+actuvidad: WHILE 06
+
+*/
+
+
 function mostrar()
 {
 	var numeroAcumulado;
@@ -8,19 +16,20 @@ function mostrar()
 	var promedio;
 
 	numeroAcumulado=0
-	contador=1;
+	contador=0;
 
-	while(contador<6)
+	while(contador<5)
 	{
+		contador++;
 		numeroIngresado=prompt("ingrese el "+contador+"º numero");
 		numeroIngresado=parseInt(numeroIngresado);
 
 		numeroAcumulado= numeroAcumulado+numeroIngresado;
 
-		contador++;
+		
 	}
 
-	promedio=numeroAcumulado/5;
+	promedio=numeroAcumulado/contador;
 
 	mensajeSuma="La suma acumulada es "+numeroAcumulado;
 	mensajePromedio= "El promedio de los numeros es "+promedio;
@@ -28,4 +37,4 @@ function mostrar()
 	document.getElementById("txtIdSuma").value=mensajeSuma;
 	document.getElementById("txtIdPromedio").value=mensajePromedio;
 
-}//FIN DE LA FUNCIÓN
+}

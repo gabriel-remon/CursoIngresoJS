@@ -1,6 +1,11 @@
 /*
 Al presionar el botón pedir un sexo
-'f' para femenino, 'm' para masculino.*/
+'f' para femenino, 'm' para masculino.
+
+autor: Remon Gabriel
+actuvidad: WHILE 05
+
+*/
 function mostrar()
 {
 	var sexoIngresado;
@@ -13,24 +18,24 @@ function mostrar()
 	{
 		sexoIngresado=prompt("ingrese su sexo (f o m)");
 
-		if (sexoIngresado=="f")
+		switch(sexoIngresado)
 		{
-			mensaje="su sexo es femenino";
-			bucle=1;
-		}
-		else
-		{
-			if (sexoIngresado=="m")
-			{
-				mensaje="su sexo es masculino";
+			case "f":
+				mensaje="Su sexo es femenino";
 				bucle=1;
-			}
-			else
-			{
-				mensaje="Texto ingresado, no valido";
-			}
+			break;
+
+			case "m":
+				mensaje="Su sexo es masculino";
+				bucle=1;
+			break;
+
+			default:
+				mensaje="Dato ingresado, no valido";
+			break;
+
 		}
 		document.getElementById("txtIdSexo").value=mensaje;
 	}
 
-}//FIN DE LA FUNCIÓN
+}

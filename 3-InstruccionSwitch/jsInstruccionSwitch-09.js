@@ -7,8 +7,8 @@ function mostrar()
 {
 	var estacionIngresada;
 	var destinoIngresado;
-	var aumento;
-	var aumentotxt;
+	var porcentaje;
+	var bonificacion;
 	var precioBase;
 	var precioFinal;
 	var mensaje;
@@ -26,13 +26,11 @@ function mostrar()
 			switch(destinoIngresado)
 			{
 				case "Bariloche":
-					aumento = 1.2;
-					aumentotxt = "con un 20% de aumento ";
+					porcentaje=20;
 				break;
 
 				case "Mar del plata":
-					aumento = 0.8;
-					aumentotxt = "con un 20% de descuento ";
+					porcentaje=-20;
 				break;
 
 				default:
@@ -40,8 +38,7 @@ function mostrar()
 				case "Cataratas":
 				case "Cordoba" :
 				*/
-					aumento = 0.9;
-					aumentotxt = "con un 10% de descuento ";
+					porcentaje=-10;
 				break;
 			}
 		break;
@@ -51,13 +48,11 @@ function mostrar()
 			switch(destinoIngresado)
 			{
 				case "Bariloche":
-					aumento = 0.8;
-					aumentotxt = "con un 20% de descuento ";
+					porcentaje=-20;
 				break;
 
 				case "Mar del plata":
-					aumento = 1.2;
-					aumentotxt = "con un 20% de aumento ";
+					porcentaje=20;
 				break;
 
 				default:
@@ -65,8 +60,7 @@ function mostrar()
 				case "Cataratas" :
 				case "Cordoba" :
 				*/
-					aumento = 1.1;
-					aumentotxt = "con un 10% de aumento ";
+					porcentaje=10;
 				break;
 			}
 		break;
@@ -80,8 +74,7 @@ function mostrar()
 			switch(destinoIngresado)
 			{
 				case "Cordoba" :
-					aumento = 1;
-					aumentotxt = "sin descuento ";
+					porcentaje=0;
 				break;
 
 				default:
@@ -90,18 +83,17 @@ function mostrar()
 				case "Cataratas" :
 				case "Mar del plata":
 				*/
-					aumento = 1.1;
-					aumentotxt = "con un 10% de aumento ";
+					porcentaje=10;
 				break; 
 			}
 		break;
 		//situacion en otoño y primavera
 	}
 
-	precioFinal=precioBase*aumento;
-	//formula de aumento o descuento de precios
+	bonificacion=precioBase*(porcentaje/100);
+	precioFinal=bonificacion+precioBase;
 
-	mensaje="El destino "+destinoIngresado+" esta "+aumentotxt+"y el precio final es $"+precioFinal;
+	mensaje="El destino "+destinoIngresado+" se encuentra con un "+porcentaje+"% y el precio final es $"+precioFinal;
 	//creacion del mensaje final
 
 	alert(mensaje);

@@ -9,21 +9,93 @@ hasta que el usuario quiera, mostrar:
 6-Cantidad de números pares.
 7-Promedio de positivos.
 8-Promedios de negativos.
-9-Diferencia entre positivos y negativos, (positvos-negativos). */
+9-Diferencia entre positivos y negativos, (positvos-negativos). 
+
+autor: Remon Gabriel
+actuvidad: WHILE 10
+
+*/
 function mostrar()
 {
-	//declarar contadores y variables 
-	var respuesta;
+
 	var numeroIngresado;
-	var sumaNegativos=0;
+	var sumaNegativo;
+	var sumaPositivos;
+	var cantidadPositivos;
+	var cantidadNegativos;
+	var cantidadCeros;
+	var cantidadPares;
+	var promedioPositivos;
+	var promedioNegativos;
+	var diferencia;
+	var contador;
+	var cantidadNumeros;
+	var resto;
+	var mensaje;
 
-	respuesta="si";
+	sumaNegativo=0;
+	sumaPositivos=0;
+	cantidadPositivos=0;
+	cantidadNegativos=0;
+	cantidadCeros=0;
+	cantidadPares=0;
+	contador=0;
+	cantidadNumeros=0;
 
-	while(respuesta=="si")
+	while(contador==0)
 	{
-		
-		respuesta=prompt("desea continuar?");
-	}//fin del while
+		cantidadNumeros++;
+		numeroIngresado=prompt("ingrese el "+cantidadNumeros+"º numero");
+		numeroIngresado=parseInt(numeroIngresado);
 
-	document.write("la suma de negativos es :"+sumaNegativos);
-}//FIN DE LA FUNCIÓN
+		if(numeroIngresado==null || isNaN(numeroIngresado))
+		{
+			contador=1;
+		}
+		else
+		{
+
+			if(numeroIngresado==0)
+			{
+				cantidadCeros++;
+			}
+			else
+			{
+				resto=numeroIngresado%2;
+				if(resto==0)
+				{
+					cantidadPares++;
+				}
+
+				if(numeroIngresado>0)
+				{
+					sumaPositivos=sumaPositivos+numeroIngresado;
+					cantidadPositivos++;
+				}
+				else
+				{
+					sumaNegativo=sumaNegativo+numeroIngresado;
+					cantidadNegativos++;
+
+				}
+			}
+		}
+	}
+
+	promedioPositivos=sumaPositivos/cantidadPositivos;
+	promedioNegativos=sumaNegativo/cantidadNegativos;
+	diferencia=sumaPositivos+sumaNegativo;
+	
+	mensaje="La suma de los numeros positivos es: "+sumaPositivos+"<br>";
+	mensaje=mensaje+"La suma de los numeros negativos es: "+sumaNegativo+"<br>";
+	mensaje=mensaje+"Se ingresaron "+cantidadPositivos+" numeros positivos <br>";
+	mensaje=mensaje+"Se ingresaron "+cantidadNegativos+" numeros negativos <br>";
+	mensaje=mensaje+"Se ingresaron "+cantidadCeros+" ceros <br>";
+	mensaje=mensaje+"se ingresaron "+cantidadPares+" numeros pares <br>";
+	mensaje=mensaje+"El promedio de los nuemros positivos es: "+promedioPositivos+"<br>";
+	mensaje=mensaje+"El promedio de los numeros negativos es: "+promedioNegativos+"<br>";
+	mensaje=mensaje+"La diferencia entre positivos y negativos es: "+diferencia;
+
+	document.write(mensaje);
+
+}

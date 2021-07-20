@@ -1,18 +1,24 @@
+/*
+
+alumno: Remon Gabriel
+Actuvidad: TP 08
+
+*/
+
+
+
 var eleccionMaquina;
 var ContadorDeEmpates = 0;
 var ContadorDeGanadas = 0;
 var ContadorDePerdidas = 0;
-var mensajeEleccionMaquina;
 var mensaje;
-var mensajeGanaste;
-var mensajePerdiste;
-var mensajeEmpataste;
+
 
 function comenzar()
 {
-	eleccionMaquina = Math.random();
-	eleccionMaquina = Math.floor(eleccionMaquina * 3 +1);
- //	mostrarResultado();
+	eleccionMaquina=Math.random();
+	eleccionMaquina=Math.floor(eleccionMaquina * 3 +1);
+
 }
 
 function piedra() //piedra = 1
@@ -20,19 +26,20 @@ function piedra() //piedra = 1
 
 	switch(eleccionMaquina)
 	{
-		case 1 :
-		mensaje = "empato";
-		ContadorDeEmpates = ContadorDeEmpates + 1;
+		case 1:
+			mensaje = "empato";
+			ContadorDeEmpates++;
 		break;
 
-		case 2 :
-		mensaje = "perdio";
-		ContadorDeGanadas = ContadorDeGanadas + 1;
+		case 2:
+			mensaje = "perdio";
+			ContadorDePerdidas++;
 		break;
 
-		case 3:
-		mensaje = "gano";
-		ContadorDePerdidas = ContadorDePerdidas + 1;
+		default:
+			mensaje = "gano";
+			ContadorDeGanadas++;
+		break;
 	}
 
 	mostrarResultado();
@@ -43,19 +50,20 @@ function papel() //papel = 2
 {
 	switch(eleccionMaquina)
 	{
-		case 1 :
-		mensaje = "gano";
-		ContadorDeGanadas = ContadorDeGanadas + 1;
+		case 1:
+			mensaje = "gano";
+			ContadorDeGanadas++;
 		break;
 
-		case 2 :
-		mensaje = "empato";
-		ContadorDeEmpates = ContadorDeEmpates + 1;
+		case 2:
+			mensaje = "empato";
+			ContadorDeEmpates++;
 		break;
 
-		case 3 :
-		mensaje = "perdio";
-		ContadorDePerdidas = ContadorDePerdidas + 1;
+		default:
+			mensaje = "perdio";
+			ContadorDePerdidas++;
+		break;
 	}
 
 	mostrarResultado();
@@ -65,19 +73,20 @@ function tijera()
 {
 	switch(eleccionMaquina)
 	{
-		case 1 :
-		mensaje = "perdio";
-		ContadorDePerdidas = ContadorDePerdidas + 1;
+		case 1:
+			mensaje="perdio";
+			ContadorDePerdidas++;
 		break;
 
-		case 2 :
-		mensaje = "gano";
-		ContadorDeGanadas = ContadorDeGanadas + 1;
+		case 2:
+			mensaje="gano";
+			ContadorDeGanadas++;
 		break;
 
-		case 3 :
-		mensaje = "empato";
-		ContadorDeEmpates = ContadorDeEmpates + 1;
+		default:
+			mensaje="empato";
+			ContadorDeEmpates++;
+		break;
 	}
 
 	mostrarResultado();
@@ -87,28 +96,38 @@ function tijera()
 
 function mostrarResultado()
 {
+
+	var mensajeGanaste;
+	var mensajePerdiste;
+	var mensajeEmpataste;
+	var mensajeEleccionMaquina;
+
+
 	switch(eleccionMaquina)
 	{
-		case 1 :
-		mensajeEleccionMaquina = "piedra";
+		case 1:
+			mensajeEleccionMaquina="piedra";
 		break;
 
-		case 2 :
-		mensajeEleccionMaquina = "papel";
+		case 2:
+			mensajeEleccionMaquina="papel";
 		break;
 
-		case 3 :
-		mensajeEleccionMaquina = "tijeras";
+		default:
+			mensajeEleccionMaquina="tijeras";
+		break;
 	}
 
 	mensajeGanaste = "Ganaste "+ContadorDeGanadas+" veces";
 	mensajePerdiste = "Perdiste "+ContadorDePerdidas+" veces";
 	mensajeEmpataste= "Empataste "+ContadorDeEmpates+" veces";
+	
 	mensaje= "la maquina eligio "+mensajeEleccionMaquina+". Usted "+mensaje;
 	//creacion de mensajes
 
 	document.getElementById("txtIdGanadas").value = mensajeGanaste;
 	document.getElementById("txtIdPerdidas").value = mensajePerdiste;
 	document.getElementById("txtIdEmpatadas").value = mensajeEmpataste;
+	
 	alert(mensaje);
 }

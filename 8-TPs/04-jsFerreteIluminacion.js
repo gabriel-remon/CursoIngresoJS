@@ -18,7 +18,8 @@ function CalcularPrecio ()
     var marca;
     var precioFinal;
     var precioBase;
-    var descuento;
+    var precioLampara;
+    var porcentaje;
     var impuesto;
     var mensaje;
 
@@ -31,7 +32,7 @@ function CalcularPrecio ()
 
     if(cantidadLamparas>5)
     {
-        descuento=0.5; //descuento del 50%
+        porcentaje=-50; //descuento del 50%
     }
     else
     {
@@ -40,22 +41,22 @@ function CalcularPrecio ()
             case 5:
                 if (marca=="ArgentinaLuz")
                 {
-                    descuento=0.4; //descuento del 40%
+                    porcentaje=-40; //descuento del 40%
                 }
                 else
                 {
-                    descuento=0.7; //descuento del 30%
+                    porcentaje=-30; //descuento del 30%
                 }
             break;
 
             case 4:
                 if (marca=="ArgentinaLuz" || marca=="FelipeLamparas")
                 {
-                    descuento=0.75; //descuento del 25%
+                    porcentaje=-25; //descuento del 25%
                 }
                 else
                 {
-                    descuento=0.8; //descuento del 20%
+                    porcentaje=-20; //descuento del 20%
                 }
             break;
 
@@ -63,26 +64,28 @@ function CalcularPrecio ()
                 switch(marca)
                 {
                     case "ArgentinaLuz":
-                        descuento=0.85; //descuento del 15%
+                        porcentaje=-15; //descuento del 15%
                     break;
 
                     case "FelipeLamparas":
-                        descuento=0.9; //descuento del 10%
+                        porcentaje=-10; //descuento del 10%
                     break;
 
                     default:
-                        descuento=0.95; //descuento del 5%
+                        porcentaje=-5; //descuento del 5%
                     break;
                 }
             break;
 
             default:
-                descuento=1; //sin descuento
+                porcentaje=0; //sin descuento
             break;
         }
     }
 
-    precioFinal=cantidadLamparas*precioBase*descuento;
+
+    porcentaje=cantidadLamparas*precioBase*(porcentaje/100);
+    precioFinal=cantidadLamparas*precioBase+porcentaje;
 
     if (precioFinal>120)
     {

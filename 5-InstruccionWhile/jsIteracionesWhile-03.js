@@ -1,5 +1,10 @@
 /*
-al presionar el botón pedir la CLAVE (ayuda: es utn750)*/
+al presionar el botón pedir la CLAVE (ayuda: es utn750)
+
+autor: Remon Gabriel
+actuvidad: WHILE 03
+
+*/
 function mostrar()
 {
 	var clave;
@@ -23,4 +28,4 @@ function mostrar()
 	}
 	alert("contraseña correcta");
 	
-}//FIN DE LA FUNCIÓN
+}

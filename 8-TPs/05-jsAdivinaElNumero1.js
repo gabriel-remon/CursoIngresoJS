@@ -21,7 +21,7 @@ function comenzar()
 	var inicio;
 
 	numeroSecreto=Math.random();
-	numeroSecreto=Math.floor(numeroSecreto*101);
+	numeroSecreto=Math.floor(numeroSecreto*100)+1;
 	//generacion del numero 
 
 	contadorIntentos=0;
