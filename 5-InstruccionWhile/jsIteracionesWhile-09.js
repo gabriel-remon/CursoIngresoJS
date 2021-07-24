@@ -8,56 +8,47 @@ actuvidad: WHILE 09
 */
 function mostrar()
 {
-	var numeroMaximo;
-	var numeroMinimo;
+
+
+	var numeroIngresado;
+	var seguir;
+	var maximo;
+	var minimo;
+	var contador;
 	var mensajeMaximo;
 	var mensajeMinimo;
-	var numeroIngresado;
-	var contador;
-	var cantidadNumeros;
+	var posicion;
+	var cantidadNegativos;
 
-	contador=0;
-	cantidadNumeros=0;
+	//primerIngreso=true;
 
-	while(contador==0)
+
+	while(contador<10)
 	{
-		cantidadNumeros++;
-		numeroIngresado=prompt("ingrese el "+cantidadNumeros+"º numero");
+		numeroIngresado=prompt("ingrese numero");
 		numeroIngresado=parseInt(numeroIngresado);
 
-		if(isNaN(numeroIngresado) || numeroIngresado==null)
+		if(numeroIngresado<minimo || contador==0)
 		{
-			contador=1;
+			minimo=numeroIngresado;
+			posicion=contador+1;
 		}
-		else
+
+		if(numeroIngresado<0)
 		{
-			if (cantidadNumeros==1)
+			if(primerIngreso>maximo || cantidadNegativos==0)
 			{
-				numeroMaximo=numeroIngresado;
-				numeroMinimo=numeroMaximo;
+				maximo=primerIngreso;
+				posicion=contador+1;
 			}
-			else
-			{
-				if(numeroIngresado>numeroMaximo)
-				{
-					numeroMaximo=numeroIngresado;
-				}
-				else
-				{
-					if (numeroIngresado<numeroMinimo)
-					{
-						numeroMinimo=numeroIngresado;
-					}
-				}
-			}
+
+			cantidadNegativos++;
 		}
+		
+		contador++;
+	
+		seguir=confirm("Desea continuar?");
 	}
-
-	mensajeMaximo="El numero con mayor valor ingresado es: "+numeroMaximo;
-	mensajeMinimo="El numero con menor valor ingresado es: "+numeroMinimo;
-
-	document.getElementById("txtIdMaximo").value=mensajeMaximo;
-	document.getElementById("txtIdMinimo").value=mensajeMinimo;
 
 
 }

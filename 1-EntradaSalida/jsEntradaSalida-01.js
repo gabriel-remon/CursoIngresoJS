@@ -5,6 +5,17 @@ Al presionar el  botón,
 se debe mostrar un mensaje como el siguiente "Esto funciona de maravilla"*/
 function mostrar()
 {
-	alert("Esto funciona de maravilla");
+	var a;
+
+	a=10
+
+	if (a>999 || a<9999)
+	{
+		alert("hola");
+	}
+	else
+	{
+		alert("no");
+	}
 }
 

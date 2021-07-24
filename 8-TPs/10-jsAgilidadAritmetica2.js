@@ -39,7 +39,7 @@ function random(max)
     var random;
     var max;
 
-    random=Math.floor(Math.random()*max);
+    random=Math.floor(Math.random()*max)+1;
 
     return random;
 }
@@ -53,17 +53,17 @@ function traductorOperacion(variable1,variable2,variableOperacion)
 
     switch(variableOperacion)
     {
-        case 0:
+        case 1:
             operacionSalida="+";
             resultado=variable1+variable2;
         break;
 
-        case 1:
+        case 2:
             operacionSalida="-";
             resultado=variable1-variable2;
         break;
 
-        case 2:
+        case 3:
             operacionSalida="*";
             resultado=variable1*variable2;
         break;

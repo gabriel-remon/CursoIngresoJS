@@ -9,11 +9,18 @@ actuvidad: WHILE 05
 function mostrar()
 {
 	var sexoIngresado;
-	var bucle;
 	var mensaje;
 
-	bucle=0;
+	sexoIngresado=prompt("ingrese f o m ");
 
+	while(sexoIngresado!="f" && sexoIngresado!="m")
+	{
+		sexoIngresado=prompt("error, ingrese f o m");
+	}
+
+	document.getElementById("txtIdSexo").value=sexoIngresado;
+
+	/*
 	while(bucle==0)
 	{
 		sexoIngresado=prompt("ingrese su sexo (f o m)");
@@ -37,5 +44,6 @@ function mostrar()
 		}
 		document.getElementById("txtIdSexo").value=mensaje;
 	}
+	*/
 
 }

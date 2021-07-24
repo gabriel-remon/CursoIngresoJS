@@ -28,7 +28,7 @@ function mostrar()
 	var promedioPositivos;
 	var promedioNegativos;
 	var diferencia;
-	var contador;
+	var bucle;
 	var cantidadNumeros;
 	var resto;
 	var mensaje;
@@ -39,47 +39,42 @@ function mostrar()
 	cantidadNegativos=0;
 	cantidadCeros=0;
 	cantidadPares=0;
-	contador=0;
+	bucle=true;
 	cantidadNumeros=0;
 
-	while(contador==0)
+	while(bucle)
 	{
 		cantidadNumeros++;
 		numeroIngresado=prompt("ingrese el "+cantidadNumeros+"º numero");
 		numeroIngresado=parseInt(numeroIngresado);
 
-		if(numeroIngresado==null || isNaN(numeroIngresado))
+
+		if(numeroIngresado==0)
 		{
-			contador=1;
+			cantidadCeros++;
 		}
 		else
 		{
-
-			if(numeroIngresado==0)
+			resto=numeroIngresado%2;
+			if(resto==0)
 			{
-				cantidadCeros++;
+				cantidadPares++;
+			}
+
+			if(numeroIngresado>0)
+			{
+				sumaPositivos=sumaPositivos+numeroIngresado;
+				cantidadPositivos++;
 			}
 			else
 			{
-				resto=numeroIngresado%2;
-				if(resto==0)
-				{
-					cantidadPares++;
-				}
+				sumaNegativo=sumaNegativo+numeroIngresado;
+				cantidadNegativos++;
 
-				if(numeroIngresado>0)
-				{
-					sumaPositivos=sumaPositivos+numeroIngresado;
-					cantidadPositivos++;
-				}
-				else
-				{
-					sumaNegativo=sumaNegativo+numeroIngresado;
-					cantidadNegativos++;
-
-				}
 			}
 		}
+
+		bucle=confirm("Desea continuar?");
 	}
 
 	promedioPositivos=sumaPositivos/cantidadPositivos;

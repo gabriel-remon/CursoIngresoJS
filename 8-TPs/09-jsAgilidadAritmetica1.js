@@ -13,13 +13,14 @@ Actuvidad: TP 09
     var numero1;
     var operacion;
     var numero2;
+    var resultado;
 
 function comenzar()
 {
     numero1 = numeroRandom(10);
     numero2 = numeroRandom(10);
     operacion = numeroRandom(4);
-    operacion = operacionRandom(operacion);
+    operacion = verificadorOperacion(numero1,numero2,operacion);
 
     document.getElementById("txtIdPrimerNumero").value= numero1;
     document.getElementById("txtIdOperador").value= operacion;
@@ -29,16 +30,15 @@ function comenzar()
 
 function Responder()
 {   
-    var respuesta;
     var respuestaUsuario;
     var mensaje;
 
     respuestaUsuario = document.getElementById("txtIdRespuesta").value;
-
     respuestaUsuario = parseInt(respuestaUsuario);
-    respuesta = verificadorOperacion(numero1,numero2,operacion);
 
-    if(respuestaUsuario == respuesta)
+    document.getElementById("txtIdRespuesta").value="";
+
+    if(respuestaUsuario == resultado)
     {
         mensaje = "Felicidades es correcta";
     }
@@ -48,6 +48,8 @@ function Responder()
     }
 
     alert(mensaje);
+
+    comenzar();
 }
 
 
@@ -65,55 +67,37 @@ function numeroRandom(max)
 //funcion de numero random, "max" define hasta que numero llegara
 
 
-function operacionRandom(numerOperacion)
-{
-    var numerOperacion;
-
-    switch(numerOperacion)
-    {
-        case 1 :
-        numerOperacion = "+";
-        break;
-
-        case 2 :
-        numerOperacion = "-";
-        break;
-
-        case 3 :
-        numerOperacion = "*";
-        break;
-
-        case 4 :
-        numerOperacion = "/";
-
-    }
-    return numerOperacion;
-}
-
 
 function verificadorOperacion(variable1, variable2,variableOperacion)
 {
     var variable1;
     var variable2;
     var variableOperacion;
+    var operacion;
 
     switch(variableOperacion)
     {
-        case "+" :
+        case 1:
+        operacion="+";
         resultado = variable1 + variable2;
         break;
 
-        case "-" :
+        case 2:
+        operacion="-";
         resultado = variable1 - variable2;
         break;
 
-        case "*" :
+        case 3:
+        operacion="*";
         resultado = variable1 * variable2 ;
         break;
 
-        case "/" :
+        default:
+        operacion="/";
         resultado = variable1 / variable2;
         resultado = parseInt(resultado); 
+        break;
     }
-    return resultado;
+
+    return operacion;
 }
