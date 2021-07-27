@@ -11,6 +11,7 @@ function mostrar()
 	var marcaAlcohol;
 	var cantidadAlcohol;
 	var cantidadJabon;
+	var cantidadBarbijo
 
 	cantidadJabon=0;
 	contador=0;
@@ -43,24 +44,28 @@ function mostrar()
 
 		marca=prompt("Ingrese la marca de este producto");
 
-		if(tipoIngreso=="alcohol")
+		switch(tipoIngreso)
 		{
-			if(precioIngreso<alcoholBarato || banderaAlcohol)
-			{
-				alcoholBarato=precioIngreso;
-				cantidadAlcohol=cantidadIngreso;
-				marcaAlcohol=marca;
-				banderaAlcohol=false;
-			}
+			case "alcohol":
+				if(precioIngreso<alcoholBarato || banderaAlcohol)
+				{
+					alcoholBarato=precioIngreso;
+					cantidadAlcohol=cantidadIngreso;
+					marcaAlcohol=marca;
+					banderaAlcohol=false;
+				}	
+			break;
+
+			case "jabon":
+				cantidadJabon=cantidadJabon+cantidadIngreso;
+			break;
+
+			default:
+
+
+			break;
+
 		}
-
-
-
-		if(tipoIngreso=="jabon")
-		{
-			cantidadJabon=cantidadJabon+cantidadIngreso;
-		}
-
 
 	}
 
