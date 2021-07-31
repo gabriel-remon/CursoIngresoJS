@@ -1,135 +1,70 @@
 function mostrar()
 {
   var tipoIngreso;
-  var precioIngreso;
   var cantidadIngreso;
-  var totalIngreso;
-  var importeTotal;
-  var precioFinal;
-  var bucle;
-  var descuento;
+  var precioIngreso;
 
-  var totalArena;
-  var totalCal;
-  var totalCemento;
-  var bolsaMayor;
+  var contadorCemento;
+  var contadorCal;
+  var contadorArena;
+  var cantidadMayor;
+
+  var bucle;
+  var primerIngreso;
 
   var precioMayor;
   var tipoMayor;
-  var primerIngreso;
 
-  totalIngreso=0;
-  importeTotal=0;
-  primerIngreso=true;
+  var descuento;
+
+  var precioFinal;
+  var precioDescuento;
 
   bucle=true;
+  primerIngreso=true;
+  contadorCemento=0;
+  contadorCal=0;
+  contadorArena=0;
 
-  while(bucle)
-  {
-    tipoIngreso=prompt("Ingrese el tipo de prodructo(arena, cal o cemento)");
-    while(tipoIngreso!="arena" && tipoIngreso!="cal"  && tipoIngreso!="cemento")
-    {
-      tipoIngreso=prompt("Error ingrese solo el dato, arena, cal o cemento");
-    }
 
-    cantidadIngreso=prompt("Ingrese cuantas bolsas comprara")
-    cantidadIngreso=parseInt(cantidadIngreso);
-    while(cantidadIngreso<0 || isNaN(cantidadIngreso))
+    while(bucle)
     {
-      cantidadIngreso=prompt("Error, ingrese un valor mayor a 0");
-      cantidadIngreso=parseInt(cantidadIngreso);
-    }
+      tipoIngreso=prompt("Ingrese el tipo de producto(cemento, cal o arena)");
+      tipoIngreso=parseInt(tipoIngreso);
+      while(tipoIngreso=!"arena" && tipoIngreso!="cemento" && tipoIngreso!="cal")
+      {
+        tipoIngreso=prompt("error solo ingrerse cemento, cal o arena");
+        tipoIngreso=parseInt(tipoIngreso);
+      }
 
-    precioIngreso=prompt("Ingrese el precio de cada bolsa");
-    precioIngreso=parseInt(precioIngreso);
-    while(precioIngreso<0 || isNaN(precioIngreso))
-    {
-      precioIngreso=prompt("Error, ingrese una mayor a 0");
+      precioIngreso=prompt("ingrese el precio");
       precioIngreso=parseInt(precioIngreso);
-    }
+      while(precioIngreso<1 || isNaN(precioIngreso))
+      {
+        precioIngreso=prompt("Error ingrese un precio mayor a 0");
+        precioIngreso=parseInt(precioIngreso);
+      }
 
-    switch(totalIngreso)
+      cantidadIngreso=prompt("Ingrese la cantidad de bolsas");
+      cantidadIngreso=parseInt(cantidadIngreso);
+      while(cantidadIngreso<1 || isNaN(cantidadIngreso))
+      {
+        cantidadIngreso=prompt("Error ingrese un numero mayor a 0");
+        cantidadIngreso=parseInt(cantidadIngreso);
+      }
+    }
+    switch(tipoIngreso)
     {
-      case "arena":
-        totalArena=totalArena+cantidadIngreso;
+      case "cal":
+        contadorCal=contadorCal+cantidadIngreso;
       break;
 
-      case "cal":
-        totalCal=totalCal+cantidadIngreso;
+      case "cemeto":
+        contadorCemento=contadorCemento+cantidadIngreso;
       break;
 
       default:
-        totalCemento=totalCemento+cantidadIngreso;
+        contadorArena=contadorArena+cantidadIngreso;
       break;
-
     }
-
-    if(precioIngreso>precioMayor || primerIngreso)
-    {
-      primerIngreso=false;
-      precioMayor=precioIngreso;
-      tipoMayor=tipoIngreso;
-    }
-
-    totalIngreso=totalIngreso+cantidadIngreso;
-    importeTotal=importeTotal+precioIngreso;
-
-
-    bucle=confirm("Desea ingresar mas productos?");
-
-  
-  }
-
-  if(totalIngreso>30)
-  {
-    descuento=25;
-  }
-  else
-  {
-    if (totalIngreso>15)
-    {
-      descuento=15;
-    }
-    else
-    {
-      descuento=0;
-    }
-  }
-
-  if(totalCal>totalCemento && totalCal>totalArena)
-  {
-    bolsaMayor="cal";
-  }
-  else
-  {
-    if(totalCemento>totalArena)
-    {
-      bolsaMayor="cemento";
-    }
-    else
-    {
-      bolsaMayor="arena";
-    }
-  }
-
-  precioFinal=importeTotal*totalIngreso
-
-  if(descuento>0)
-  {
-     descuento=precioFinal*(descuento/100);
-     precioFinal=precioFinal-descuento;
-     mensaje="El importe a pagar (con descuento) es $"+precioFinal+"\n";
-  }
-  else
-  {
-    mensaje="El importe total a pagar es $"+precioFinal+"\n";
-  }
-
-
-  mensaje=mensaje+"El producto con mayor cantidad de bolsa compradas fue: "+bolsaMayor+"\n";
-  mensaje=mensaje+"El producto mas caro es: "+tipoMayor;
-  
-  alert(mensaje);
-
-    
 }
